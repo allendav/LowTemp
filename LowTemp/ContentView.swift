@@ -7,9 +7,24 @@
 
 import SwiftUI
 
+struct Thermometer: Hashable {
+    var name: String
+    var temperature: Float
+}
+
 struct ContentView: View {
+    @State private var followedThermometers = [
+        Thermometer(name: "Backyard", temperature: 55.3),
+        Thermometer(name: "Garage", temperature: 62.4),
+        Thermometer(name: "Office", temperature: 68.0),
+    ]
+
     var body: some View {
-        Text("Hello, world!")
+        List {
+            ForEach(followedThermometers, id: \.self) { thermometer in
+                Text(thermometer.name)
+            }
+        }
             .padding()
     }
 }
