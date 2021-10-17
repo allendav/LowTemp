@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-struct Thermometer: Hashable {
-    var name: String
-    var temperature: Float
-}
-
 struct ContentView: View {
     @State private var followedThermometers = [
         Thermometer(name: "Backyard", temperature: 55.3),
