@@ -20,7 +20,7 @@ struct ContentView: View {
                 .font(.title)
             List {
                 ForEach(followedThermometers, id: \.self) { thermometer in
-                    Text(thermometer.name)
+                    ThermometerRow(thermometer: thermometer)
                 }
             }
         }
