@@ -15,12 +15,23 @@ struct ContentView: View {
     ]
 
     var body: some View {
-        List {
-            ForEach(followedThermometers, id: \.self) { thermometer in
-                Text(thermometer.name)
+        VStack{
+            Text(Localization.myThermometers)
+                .font(.title)
+            List {
+                ForEach(followedThermometers, id: \.self) { thermometer in
+                    Text(thermometer.name)
+                }
             }
         }
-            .padding()
+    }
+}
+
+private extension ContentView {
+    enum Localization {
+        static let myThermometers = NSLocalizedString(
+            "My Thermometers", comment: ""
+        )
     }
 }
 
