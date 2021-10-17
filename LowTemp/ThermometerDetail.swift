@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ThermometerDetail: View {
+    var thermometer: Thermometer
+
     var body: some View {
         VStack {
-            Text("66.6")
+            Text(String(thermometer.temperature))
                 .font(.title)
-            Text("Thermometer Title")
+            Text(thermometer.name)
             Text("two minutes ago")
                 .font(.footnote)
             Spacer()
@@ -22,6 +24,6 @@ struct ThermometerDetail: View {
 
 struct ThermometerDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ThermometerDetail()
+        ThermometerDetail(thermometer: Thermometer(name: "Demo thermometer", temperature: 67.8))
     }
 }
