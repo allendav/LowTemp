@@ -18,7 +18,9 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(followedThermometers, id: \.self) { thermometer in
-                    ThermometerRow(thermometer: thermometer)
+                    NavigationLink(destination: ThermometerDetail()) {
+                        ThermometerRow(thermometer: thermometer)
+                    }
                 }
             }
             .navigationTitle(Localization.myThermometers)
