@@ -26,6 +26,6 @@ struct ThermometerRow: View {
 
 struct ThermometerRow_Previews: PreviewProvider {
     static var previews: some View {
-        ThermometerRow(thermometer: Thermometer(name: "Demo thermometer", temperature: 67.8))
+        ThermometerRow(thermometer: Thermometer(name: "Demo Thermometer", temperature: 67.8))
     }
 }
