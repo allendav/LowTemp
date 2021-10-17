@@ -15,14 +15,13 @@ struct ContentView: View {
     ]
 
     var body: some View {
-        VStack{
-            Text(Localization.myThermometers)
-                .font(.title)
+        NavigationView {
             List {
                 ForEach(followedThermometers, id: \.self) { thermometer in
                     ThermometerRow(thermometer: thermometer)
                 }
             }
+            .navigationTitle(Localization.myThermometers)
         }
     }
 }

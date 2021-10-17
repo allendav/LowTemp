@@ -11,7 +11,15 @@ struct ThermometerRow: View {
     let thermometer: Thermometer
 
     var body: some View {
-        Text(thermometer.name)
+        HStack {
+            Text(String(thermometer.temperature))
+                .font(.title)
+            VStack(alignment: .leading) {
+                Text(thermometer.name)
+                Text("2 minutes ago")
+                    .font(.footnote)
+            }
+        }
     }
 }
 
