@@ -12,7 +12,7 @@ struct ThermometerDetail: View {
 
     var body: some View {
         VStack {
-            Text(String(thermometer.temperature))
+            Text(thermometer.formattedTemperature())
                 .font(.title)
             Text(thermometer.name)
             Text("two minutes ago")
