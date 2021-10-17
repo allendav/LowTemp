@@ -14,6 +14,7 @@ struct ThermometerRow: View {
         HStack {
             Text(String(thermometer.temperature))
                 .font(.title)
+                .frame(width: 70, alignment: .leading)
             VStack(alignment: .leading) {
                 Text(thermometer.name)
                 Text("2 minutes ago")

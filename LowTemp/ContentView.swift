@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var followedThermometers = [
-        Thermometer(name: "Backyard", temperature: 55.3),
+        Thermometer(name: "Backyard", temperature: 5.3),
         Thermometer(name: "Garage", temperature: 62.4),
         Thermometer(name: "Office", temperature: 68.0),
     ]
