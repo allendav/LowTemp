@@ -8,16 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var followedThermometers = [
-        Thermometer(name: "Backyard Patio", temperature: 5.3),
-        Thermometer(name: "Garage", temperature: 62.4),
-        Thermometer(name: "Master Bedroom", temperature: 68.0),
-    ]
+    @ObservedObject var thermometerStore = ThermometerStore()
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(followedThermometers, id: \.self) { thermometer in
+                ForEach(thermometerStore.thermometers, id: \.self) { thermometer in
                     NavigationLink(destination: ThermometerDetail(thermometer: thermometer)) {
                         ThermometerRow(thermometer: thermometer)
                     }
