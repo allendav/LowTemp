@@ -27,6 +27,7 @@ struct ThermometerDetail_Previews: PreviewProvider {
         ThermometerDetail(
             thermometer: Thermometer(
                 name: "Demo Thermometer",
+                hasTemperatureReading: true,
                 temperatureReading: 67.8,
                 temperatureDate: Date(timeIntervalSinceNow: -30)
             )

@@ -4,8 +4,8 @@
 
 - [x] Add the datetime of the temperature reading for a thermometer
 
-- [ ] Show a (canned) list of thermometers that can be added to the main view
-- [ ] Add a selected thermometer to the main view
+- [x] Show a (canned) list of thermometers that can be added to the main view
+- [x] Add a selected thermometer to the main view
 - [ ] Delete a thermometer from the main view
 
 - [ ] Define a "no thermometers, add one" view

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ThermometerChooser: View {
-    @Binding var showThermometerChooser: Bool
+    @ObservedObject var thermometerStore: ThermometerStore
+    @Binding var showingThermometerChooser: Bool
 
     @State var discoveredThermometers = [
         DiscoveredThermometer(
@@ -26,11 +27,15 @@ struct ThermometerChooser: View {
             List {
                 ForEach(discoveredThermometers, id: \.self) { thermometer in
                     DiscoveredThermometerRow(thermometer: thermometer)
+                        .onTapGesture {
+                            thermometerStore.addThermometer(name: thermometer.name)
+                            showingThermometerChooser = false
+                        }
                 }
             }
             .navigationBarTitle(Text(Localization.addDevice), displayMode: .inline)
             .navigationBarItems(trailing: Button(action: {
-                self.showThermometerChooser = false
+                showingThermometerChooser = false
             }) {
                 Text(Localization.done).bold()
             })
@@ -53,6 +58,9 @@ private extension ThermometerChooser {
 
 struct ThermometerChooser_Previews: PreviewProvider {
     static var previews: some View {
-        ThermometerChooser(showThermometerChooser: .constant(true))
+        ThermometerChooser(
+            thermometerStore: ThermometerStore(),
+            showingThermometerChooser: .constant(true)
+        )
     }
 }
