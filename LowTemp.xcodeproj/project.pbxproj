@@ -17,6 +17,8 @@
 		31AEBDC9271D286A0004BBB9 /* ThermometerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AEBDC8271D286A0004BBB9 /* ThermometerStore.swift */; };
 		31D52EC327235FC600F1937A /* LowTemp.md in Resources */ = {isa = PBXBuildFile; fileRef = 31D52EC227235FC600F1937A /* LowTemp.md */; };
 		31D52EC52723669700F1937A /* ThermometerChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D52EC42723669700F1937A /* ThermometerChooser.swift */; };
+		31D52EC727236A8E00F1937A /* DiscoveredThermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D52EC627236A8E00F1937A /* DiscoveredThermometer.swift */; };
+		31D52EC927236BCB00F1937A /* DiscoveredThermometerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D52EC827236BCB00F1937A /* DiscoveredThermometerRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		31AEBDC8271D286A0004BBB9 /* ThermometerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermometerStore.swift; sourceTree = "<group>"; };
 		31D52EC227235FC600F1937A /* LowTemp.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LowTemp.md; sourceTree = "<group>"; };
 		31D52EC42723669700F1937A /* ThermometerChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermometerChooser.swift; sourceTree = "<group>"; };
+		31D52EC627236A8E00F1937A /* DiscoveredThermometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveredThermometer.swift; sourceTree = "<group>"; };
+		31D52EC827236BCB00F1937A /* DiscoveredThermometerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveredThermometerRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 		31AEBDCA271D291C0004BBB9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				31D52EC627236A8E00F1937A /* DiscoveredThermometer.swift */,
 				31AEBDC2271C718A0004BBB9 /* Thermometer.swift */,
 			);
 			path = Models;
@@ -99,6 +104,7 @@
 				31D52EC42723669700F1937A /* ThermometerChooser.swift */,
 				31AEBDC6271C7AE50004BBB9 /* ThermometerDetail.swift */,
 				31AEBDC4271C73EC0004BBB9 /* ThermometerRow.swift */,
+				31D52EC827236BCB00F1937A /* DiscoveredThermometerRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +189,8 @@
 			files = (
 				31AEBDB6271C68C10004BBB9 /* ContentView.swift in Sources */,
 				31AEBDB4271C68C10004BBB9 /* LowTempApp.swift in Sources */,
+				31D52EC727236A8E00F1937A /* DiscoveredThermometer.swift in Sources */,
+				31D52EC927236BCB00F1937A /* DiscoveredThermometerRow.swift in Sources */,
 				31D52EC52723669700F1937A /* ThermometerChooser.swift in Sources */,
 				31AEBDC9271D286A0004BBB9 /* ThermometerStore.swift in Sources */,
 				31AEBDC7271C7AE50004BBB9 /* ThermometerDetail.swift in Sources */,

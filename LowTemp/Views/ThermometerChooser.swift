@@ -8,8 +8,26 @@
 import SwiftUI
 
 struct ThermometerChooser: View {
+    @State var discoveredThermometers = [
+        DiscoveredThermometer(
+            name: "BlueTherm 28A8",
+            rssi: -65
+        ),
+        DiscoveredThermometer(
+            name: "BlueTherm B22A",
+            rssi: -55
+        )
+    ]
+
     var body: some View {
-        Text("Thermometer Chooser")
+        NavigationView {
+            List {
+                ForEach(discoveredThermometers, id: \.self) { thermometer in
+                    DiscoveredThermometerRow(thermometer: thermometer)
+                }
+            }
+            .navigationBarTitle(Text("Choose a Device to Add"), displayMode: .inline)
+        }
     }
 }
 
