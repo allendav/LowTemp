@@ -16,6 +16,7 @@
 		31AEBDC7271C7AE50004BBB9 /* ThermometerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AEBDC6271C7AE50004BBB9 /* ThermometerDetail.swift */; };
 		31AEBDC9271D286A0004BBB9 /* ThermometerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AEBDC8271D286A0004BBB9 /* ThermometerStore.swift */; };
 		31D52EC327235FC600F1937A /* LowTemp.md in Resources */ = {isa = PBXBuildFile; fileRef = 31D52EC227235FC600F1937A /* LowTemp.md */; };
+		31D52EC52723669700F1937A /* ThermometerChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D52EC42723669700F1937A /* ThermometerChooser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		31AEBDC6271C7AE50004BBB9 /* ThermometerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermometerDetail.swift; sourceTree = "<group>"; };
 		31AEBDC8271D286A0004BBB9 /* ThermometerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermometerStore.swift; sourceTree = "<group>"; };
 		31D52EC227235FC600F1937A /* LowTemp.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LowTemp.md; sourceTree = "<group>"; };
+		31D52EC42723669700F1937A /* ThermometerChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermometerChooser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				31AEBDB5271C68C10004BBB9 /* ContentView.swift */,
+				31D52EC42723669700F1937A /* ThermometerChooser.swift */,
 				31AEBDC6271C7AE50004BBB9 /* ThermometerDetail.swift */,
 				31AEBDC4271C73EC0004BBB9 /* ThermometerRow.swift */,
 			);
@@ -180,6 +183,7 @@
 			files = (
 				31AEBDB6271C68C10004BBB9 /* ContentView.swift in Sources */,
 				31AEBDB4271C68C10004BBB9 /* LowTempApp.swift in Sources */,
+				31D52EC52723669700F1937A /* ThermometerChooser.swift in Sources */,
 				31AEBDC9271D286A0004BBB9 /* ThermometerStore.swift in Sources */,
 				31AEBDC7271C7AE50004BBB9 /* ThermometerDetail.swift in Sources */,
 				31AEBDC3271C718A0004BBB9 /* Thermometer.swift in Sources */,

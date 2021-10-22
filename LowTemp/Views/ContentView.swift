@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var thermometerStore = ThermometerStore()
+    @State var showThermometerChooser = false
 
     var body: some View {
         NavigationView {
@@ -20,6 +21,15 @@ struct ContentView: View {
                 }
             }
             .navigationTitle(Localization.myThermometers)
+            .navigationBarItems(
+                trailing: Button(action: {
+                    self.showThermometerChooser.toggle()
+                }) {
+                    Image(systemName: "plus.circle.fill")
+                }
+            )
+        }.sheet(isPresented: $showThermometerChooser) {
+            ThermometerChooser()
         }
     }
 }
