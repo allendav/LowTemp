@@ -12,10 +12,10 @@ struct ThermometerDetail: View {
 
     var body: some View {
         VStack {
-            Text(thermometer.formattedTemperature())
+            Text(thermometer.formattedTemperatureReading())
                 .font(.title)
             Text(thermometer.name)
-            Text("two minutes ago")
+            Text(thermometer.formattedTemperatureDate())
                 .font(.footnote)
             Spacer()
         }
@@ -24,6 +24,12 @@ struct ThermometerDetail: View {
 
 struct ThermometerDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ThermometerDetail(thermometer: Thermometer(name: "Demo Thermometer", temperature: 67.8))
+        ThermometerDetail(
+            thermometer: Thermometer(
+                name: "Demo Thermometer",
+                temperatureReading: 67.8,
+                temperatureDate: Date(timeIntervalSinceNow: -30)
+            )
+        )
     }
 }

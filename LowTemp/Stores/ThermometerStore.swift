@@ -12,9 +12,21 @@ class ThermometerStore: ObservableObject {
 
     init() {
         thermometers = [
-            Thermometer(name: "Backyard Patio", temperature: 5.3),
-            Thermometer(name: "Garage", temperature: 62.4),
-            Thermometer(name: "Master Bedroom", temperature: 68.0),
+            Thermometer(
+                name: "Backyard Patio",
+                temperatureReading: 5.3,
+                temperatureDate: Date(timeIntervalSinceNow: -300)
+            ),
+            Thermometer(
+                name: "Garage",
+                temperatureReading: 62.4,
+                temperatureDate: Date(timeIntervalSinceNow: -3000)
+            ),
+            Thermometer(
+                name: "Master Bedroom",
+                temperatureReading: 68.0,
+                temperatureDate: Date(timeIntervalSinceNow: -30)
+            )
         ]
     }
 }
