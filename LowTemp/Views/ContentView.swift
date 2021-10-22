@@ -29,7 +29,7 @@ struct ContentView: View {
                 }
             )
         }.sheet(isPresented: $showThermometerChooser) {
-            ThermometerChooser()
+            ThermometerChooser(showThermometerChooser: self.$showThermometerChooser)
         }
     }
 }

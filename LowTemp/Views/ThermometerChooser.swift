@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ThermometerChooser: View {
+    @Binding var showThermometerChooser: Bool
+
     @State var discoveredThermometers = [
         DiscoveredThermometer(
             name: "BlueTherm 28A8",
@@ -26,13 +28,31 @@ struct ThermometerChooser: View {
                     DiscoveredThermometerRow(thermometer: thermometer)
                 }
             }
-            .navigationBarTitle(Text("Choose a Device to Add"), displayMode: .inline)
+            .navigationBarTitle(Text(Localization.addDevice), displayMode: .inline)
+            .navigationBarItems(trailing: Button(action: {
+                self.showThermometerChooser = false
+            }) {
+                Text(Localization.done).bold()
+            })
         }
+    }
+}
+
+private extension ThermometerChooser {
+    enum Localization {
+        static let addDevice = NSLocalizedString(
+            "Add Device",
+            comment: ""
+        )
+        static let done = NSLocalizedString(
+            "Done",
+            comment:""
+        )
     }
 }
 
 struct ThermometerChooser_Previews: PreviewProvider {
     static var previews: some View {
-        ThermometerChooser()
+        ThermometerChooser(showThermometerChooser: .constant(true))
     }
 }
