@@ -19,6 +19,7 @@ struct ContentView: View {
                         ThermometerRow(thermometer: thermometer)
                     }
                 }
+                .onDelete(perform: onDelete)
             }
             .navigationTitle(Localization.myThermometers)
             .navigationBarItems(
@@ -34,6 +35,11 @@ struct ContentView: View {
                 showingThermometerChooser: self.$showingThermometerChooser
             )
         }
+    }
+
+    func onDelete(at offsets: IndexSet) {
+        // TODO: Flux action instead?
+        thermometerStore.thermometers.remove(atOffsets: offsets)
     }
 }
 
