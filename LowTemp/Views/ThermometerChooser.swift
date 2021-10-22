@@ -28,7 +28,14 @@ struct ThermometerChooser: View {
                 ForEach(discoveredThermometers, id: \.self) { thermometer in
                     DiscoveredThermometerRow(thermometer: thermometer)
                         .onTapGesture {
-                            thermometerStore.addThermometer(name: thermometer.name)
+                            thermometerStore.thermometers.append(
+                                Thermometer(
+                                    name: thermometer.name,
+                                    hasTemperatureReading: false,
+                                    temperatureReading: 0,
+                                    temperatureDate: Date(timeIntervalSinceNow: 0)
+                                )
+                            )
                             showingThermometerChooser = false
                         }
                 }

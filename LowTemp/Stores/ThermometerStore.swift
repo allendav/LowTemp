@@ -32,15 +32,4 @@ class ThermometerStore: ObservableObject {
             )
         ]
     }
-
-    func addThermometer(name: String) {
-        thermometers.append(
-            Thermometer(
-                name: name,
-                hasTemperatureReading: false,
-                temperatureReading: 0,
-                temperatureDate: Date(timeIntervalSinceNow: 0)
-            )
-        )
-    }
 }
