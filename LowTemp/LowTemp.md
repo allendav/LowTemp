@@ -6,9 +6,13 @@
 
 - [x] Show a (canned) list of thermometers that can be added to the main view
 - [x] Add a selected thermometer to the main view
-- [ ] Delete a thermometer from the main view
+- [x] Delete a thermometer from the main view
 
 - [ ] Define a "no thermometers, add one" view
+- [ ] Have ThermometerChooser use Thermometer store discovered thermometers as its data source
+
+- [ ] Add a dispatcher and have Thermometer store register with it for a .didDiscover(Thermometer) action
+- [ ] Have DeviceService fire actions at Thermometer store as it discovers thermometers
 
 - [ ] Persist thermometers to settings or core data or something
 
