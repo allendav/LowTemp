@@ -13,7 +13,7 @@ struct ThermometerRow: View {
     var body: some View {
         HStack {
             Text(thermometer.formattedTemperatureReading())
-                .font(.title)
+                .font(.headline)
                 .frame(width: 70, alignment: .leading)
             VStack(alignment: .leading) {
                 Text(thermometer.name)

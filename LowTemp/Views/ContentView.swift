@@ -46,7 +46,7 @@ struct ContentView: View {
 private extension ContentView {
     enum Localization {
         static let myThermometers = NSLocalizedString(
-            "My Thermometers", comment: ""
+            "Thermometers", comment: ""
         )
     }
 }
