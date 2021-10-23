@@ -28,7 +28,7 @@ struct ThermometerChooser: View {
                 ForEach(discoveredThermometers, id: \.self) { thermometer in
                     DiscoveredThermometerRow(thermometer: thermometer)
                         .onTapGesture {
-                            // TODO: Flux action instead?
+                            // TODO: Flux action instead
                             thermometerStore.thermometers.append(
                                 Thermometer(
                                     name: thermometer.name,

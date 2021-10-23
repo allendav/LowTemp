@@ -19,6 +19,7 @@
 		31D52EC52723669700F1937A /* ThermometerChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D52EC42723669700F1937A /* ThermometerChooser.swift */; };
 		31D52EC727236A8E00F1937A /* DiscoveredThermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D52EC627236A8E00F1937A /* DiscoveredThermometer.swift */; };
 		31D52EC927236BCB00F1937A /* DiscoveredThermometerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D52EC827236BCB00F1937A /* DiscoveredThermometerRow.swift */; };
+		31D52ECC2723839F00F1937A /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D52ECB2723839F00F1937A /* DeviceService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		31D52EC42723669700F1937A /* ThermometerChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermometerChooser.swift; sourceTree = "<group>"; };
 		31D52EC627236A8E00F1937A /* DiscoveredThermometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveredThermometer.swift; sourceTree = "<group>"; };
 		31D52EC827236BCB00F1937A /* DiscoveredThermometerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveredThermometerRow.swift; sourceTree = "<group>"; };
+		31D52ECB2723839F00F1937A /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				31D52EC227235FC600F1937A /* LowTemp.md */,
 				31AEBDCA271D291C0004BBB9 /* Models */,
+				31D52ECA2723836D00F1937A /* Services */,
 				31AEBDCC271D29330004BBB9 /* Stores */,
 				31AEBDCB271D29240004BBB9 /* Views */,
 				31AEBDB7271C68C30004BBB9 /* Assets.xcassets */,
@@ -115,6 +118,14 @@
 				31AEBDC8271D286A0004BBB9 /* ThermometerStore.swift */,
 			);
 			path = Stores;
+			sourceTree = "<group>";
+		};
+		31D52ECA2723836D00F1937A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				31D52ECB2723839F00F1937A /* DeviceService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +207,7 @@
 				31AEBDC7271C7AE50004BBB9 /* ThermometerDetail.swift in Sources */,
 				31AEBDC3271C718A0004BBB9 /* Thermometer.swift in Sources */,
 				31AEBDC5271C73EC0004BBB9 /* ThermometerRow.swift in Sources */,
+				31D52ECC2723839F00F1937A /* DeviceService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var thermometerStore = ThermometerStore()
+    @ObservedObject var thermometerStore: ThermometerStore
     @State var showingThermometerChooser = false
 
     var body: some View {
@@ -38,7 +38,7 @@ struct ContentView: View {
     }
 
     func onDelete(at offsets: IndexSet) {
-        // TODO: Flux action instead?
+        // TODO: Flux action instead
         thermometerStore.thermometers.remove(atOffsets: offsets)
     }
 }
@@ -53,6 +53,6 @@ private extension ContentView {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(thermometerStore: ThermometerStore())
     }
 }
