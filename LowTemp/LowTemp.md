@@ -1,12 +1,25 @@
 # LowTemp
 
+## Design
+
+### View Layer
+- SwiftUI based
+- Use @State and @Bindings for temporal view state, rely on Stores for "persisted" state
+
+### Store Layer
+- Acts as an intermediary between the Service Layer and the View Layer
+- Instantiated during Application startup
+- Stores are passed needed Services as dependencies
+- Implement ObservableObject for SwiftUI Views to observe
+- Expose @Published properties (e.g. an array of Thermometers)
+- Passed into Views as dependencies
+
+### Services Layer
+- Shared resources, e.g. Bluetooth devices
+- Instantiated during Application startup
+- Passed into Stores as dependencies
+
 ## Next Steps
-
-- [x] Add the datetime of the temperature reading for a thermometer
-
-- [x] Show a (canned) list of thermometers that can be added to the main view
-- [x] Add a selected thermometer to the main view
-- [x] Delete a thermometer from the main view
 
 - [ ] Define a "no thermometers, add one" view
 - [ ] Have ThermometerChooser use Thermometer store discovered thermometers as its data source

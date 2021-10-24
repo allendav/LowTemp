@@ -11,21 +11,10 @@ struct ThermometerChooser: View {
     @ObservedObject var thermometerStore: ThermometerStore
     @Binding var showingThermometerChooser: Bool
 
-    @State var discoveredThermometers = [
-        DiscoveredThermometer(
-            name: "BlueTherm 28A8",
-            rssi: -65
-        ),
-        DiscoveredThermometer(
-            name: "BlueTherm B22A",
-            rssi: -55
-        )
-    ]
-
     var body: some View {
         NavigationView {
             List {
-                ForEach(discoveredThermometers, id: \.self) { thermometer in
+                ForEach(thermometerStore.discoveredThermometers, id: \.self) { thermometer in
                     DiscoveredThermometerRow(thermometer: thermometer)
                         .onTapGesture {
                             // TODO: Flux action instead
@@ -67,7 +56,9 @@ private extension ThermometerChooser {
 struct ThermometerChooser_Previews: PreviewProvider {
     static var previews: some View {
         ThermometerChooser(
-            thermometerStore: ThermometerStore(),
+            thermometerStore: ThermometerStore(
+                deviceService: PreviewDeviceService()
+            ),
             showingThermometerChooser: .constant(true)
         )
     }

@@ -9,8 +9,16 @@ import SwiftUI
 
 @main
 struct LowTempApp: App {
-    @ObservedObject var thermometerStore = ThermometerStore()
-    let deviceService = DeviceService()
+    private let deviceService: DeviceService
+    private let thermometerStore: ThermometerStore
+
+    init() {
+        /// Initialize services layer
+        deviceService = DeviceService()
+
+        /// Initialize stores
+        thermometerStore = ThermometerStore(deviceService: deviceService)
+    }
 
     var body: some Scene {
         WindowGroup {

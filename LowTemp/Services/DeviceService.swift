@@ -8,7 +8,13 @@
 import CoreBluetooth
 import Foundation
 
-class DeviceService: NSObject {
+protocol DeviceServiceProvider {
+}
+
+class PreviewDeviceService: DeviceServiceProvider {
+}
+
+class DeviceService: NSObject, DeviceServiceProvider {
     private var centralManager: CBCentralManager!
 
     override init() {
