@@ -18,6 +18,9 @@ struct LowTempApp: App {
 
         /// Initialize stores
         thermometerStore = ThermometerStore(deviceService: deviceService)
+
+        /// Bootstrap the store
+        thermometerStore.performAction(action: .loadThermometers)
     }
 
     var body: some Scene {

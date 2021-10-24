@@ -22,7 +22,7 @@ struct DiscoveredThermometerRow: View {
 struct DiscoveredThermometerRow_Previews: PreviewProvider {
     static var previews: some View {
         DiscoveredThermometerRow(
-            thermometer: DiscoveredThermometer(name: "BlueTherm 999A", rssi: -88)
+            thermometer: PreviewDiscoveredThermometer()
         )
     }
 }
