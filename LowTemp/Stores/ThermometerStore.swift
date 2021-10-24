@@ -5,6 +5,7 @@
 //  Created by Allen Snook on 10/17/21.
 //
 
+import Combine
 import CoreBluetooth
 import Foundation
 
@@ -19,22 +20,17 @@ class ThermometerStore: ObservableObject {
 
     private var deviceService: DeviceServiceProvider
 
+    private var cancellable: AnyCancellable?
+
     init(deviceService: DeviceServiceProvider) {
         self.deviceService = deviceService
 
-        /// Dummy data for now
-        discoveredThermometers = [
-            DiscoveredThermometer(
-                name: "BlueTherm 28A8",
-                rssi: -65,
-                identifier: CBUUID()
-            ),
-            DiscoveredThermometer(
-                name: "BlueTherm B22A",
-                rssi: -55,
-                identifier: CBUUID()
-            )
-        ]
+        cancellable = deviceService.discoveredThermometer.sink(receiveValue: { thermometer in
+            guard let thermometer = thermometer else {
+                return
+            }
+            self.discoveredThermometers.append(thermometer)
+        })
     }
 
     func performAction(action: ThermometerStoreAction) {
@@ -81,10 +77,12 @@ class ThermometerStore: ObservableObject {
     }
 
     private func startDiscovery() {
+        print("starting discovery")
         deviceService.startScan()
     }
 
     private func stopDiscovery() {
+        print("stopping discovery")
         deviceService.stopScan()
     }
 

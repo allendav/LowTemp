@@ -24,7 +24,8 @@ struct ContentView: View {
             .navigationTitle(Localization.myThermometers)
             .navigationBarItems(
                 trailing: Button(action: {
-                    self.showingThermometerChooser.toggle()
+                    self.showingThermometerChooser = true
+                    thermometerStore.performAction(action: .startDiscovery)
                 }) {
                     Image(systemName: "plus.circle.fill")
                 }

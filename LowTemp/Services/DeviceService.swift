@@ -5,20 +5,35 @@
 //  Created by Allen Snook on 10/22/21.
 //
 
+import Combine
 import CoreBluetooth
 import Foundation
 
 protocol DeviceServiceProvider {
+    var discoveredThermometer: AnyPublisher<DiscoveredThermometer?, Never> { get }
+
     func startScan()
     func stopScan()
 }
 
 class PreviewDeviceService: DeviceServiceProvider {
+    var discoveredThermometer: AnyPublisher<DiscoveredThermometer?, Never>  {
+        discoveredThermometerSubject.eraseToAnyPublisher()
+    }
+
+    private let discoveredThermometerSubject = CurrentValueSubject<DiscoveredThermometer?, Never>(nil)
+
     func startScan() {}
     func stopScan() {}
 }
 
 class DeviceService: NSObject, DeviceServiceProvider {
+    var discoveredThermometer: AnyPublisher<DiscoveredThermometer?, Never>  {
+        discoveredThermometerSubject.eraseToAnyPublisher()
+    }
+
+    private let discoveredThermometerSubject = CurrentValueSubject<DiscoveredThermometer?, Never>(nil)
+
     private var centralManager: CBCentralManager!
     private var isScanning: Bool = false
 
@@ -70,8 +85,17 @@ extension DeviceService: CBCentralManagerDelegate {
         advertisementData: [String : Any],
         rssi RSSI: NSNumber) {
 
+        discoveredThermometerSubject.send(
+            DiscoveredThermometer(
+                name: peripheral.name ?? "Unknwown",
+                rssi: RSSI,
+                identifier: CBUUID(string: "FFFF")
+            )
+        )
+
         print(peripheral)
         print("rssi \(RSSI)")
+
     }
 }
 

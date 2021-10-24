@@ -26,12 +26,14 @@ struct ThermometerChooser: View {
                                     temperatureDate: Date(timeIntervalSinceNow: 0)
                                 )
                             )
+                            thermometerStore.performAction(action: .stopDiscovery)
                             showingThermometerChooser = false
                         }
                 }
             }
             .navigationBarTitle(Text(Localization.addDevice), displayMode: .inline)
             .navigationBarItems(trailing: Button(action: {
+                thermometerStore.performAction(action: .stopDiscovery)
                 showingThermometerChooser = false
             }) {
                 Text(Localization.done).bold()
